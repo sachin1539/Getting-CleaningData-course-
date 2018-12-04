@@ -1,28 +1,26 @@
-# ## download the  Data file 
-# 
-# filesPath <- "C:\SachinAwasthi\EY\personal\Datascience\GettingandCleaningData\Week4\graded"
-# 
-# setwd(filesPath)
-# 
-# if(!file.exists("./graded")){dir.create("./graded")}
-# 
-# fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-# 
-# download.file(fileUrl,destfile="./graded/Dataset.zip",method="curl")
-# 
-# ###Unzip DataSet to /data directory
-# 
-# unzip(zipfile="./graded/Dataset.zip",exdir="./graded")
+### download the  Data file 
+ 
+filesPath <- "C:\SachinAwasthi\EY\personal\Datascience\GettingandCleaningData\Week4\graded"
+ 
+setwd(filesPath)
+ 
+ if(!file.exists("./graded")){dir.create("./graded")}
+ 
+    fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+ 
+    download.file(fileUrl,destfile="./graded/Dataset.zip",method="curl")
 
-## read the training dataset
+###Unzip DataSet to /data directory
+ 
+unzip(zipfile="./graded/Dataset.zip",exdir="./graded")
+
+### read the training dataset
 library(dplyr)
 library(data.table)
 library(tidyr)
 
 
 ## read the test datset
-
-filesPath <- "C:\\SachinAwasthi\\EY\\personal\\Datascience\\GettingandCleaningData\\Week4\\graded\\UCI HAR Dataset"
 
 trainingSubjects <- read.table(file.path(filesPath, "train", "subject_train.txt"))
 trainingValues <- read.table(file.path(filesPath, "train", "X_train.txt"))
